@@ -11,22 +11,6 @@
 /* ************************************************************************** */
 #include "minishell.h"
 
-/*aucune idée de pourquoi c'est la mdr*/
-char	*get_relative_path(char *file_to_open)
-{
-	char	*path;
-	char	*ret;
-
-	if (file_to_open[0] == '/')
-		return (ft_strdup(file_to_open));
-	path = ft_strdup("./");
-	ret = ft_strjoin(path, file_to_open);
-	printf("PARSING - Get_rel_path function return : %s\n", ret);
-	return (ret);
-}
-
-/* open_outfile_trunc:
-Opens an outfile in truncated mode. permissions 0664 = (rw-rw-r--)*/
 static void	open_outfile_trunc(t_io_fds *io, char *file, char *var_filename)
 {
 	if (!remove_old_file_ref(io, false))

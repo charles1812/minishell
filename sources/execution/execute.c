@@ -13,10 +13,6 @@
 #include "minishell.h"
 
 int	g_last_exit_code;
-/*The return status (see Exit Status) of a simple command is its
-exit status .1 waitpid function, or
-128+n if the command was terminated by signal n.
-*/
 
 static int	get_children(t_data *data)
 {
@@ -43,11 +39,6 @@ static int	get_children(t_data *data)
 	return (status);
 }
 
-/*Creates a child process for each command to execute, except in the
-case of a builtin command 
-Returns true when a process was created for each command or when a
-builtin was executed alone.
-Returns false if there was a fork error*/
 static int	create_children(t_data *data)
 {
 	t_command	*cmd;
@@ -65,12 +56,6 @@ static int	create_children(t_data *data)
 	return (get_children(data));
 }
 
-/* prep_for_exec:
-Prepares the command list for execution, creates pipes
-and checks the input and output files.
-Returns false in case of error, true if all is ready to
-execute.
-*/
 static int	prep_for_exec(t_data *data)
 {
 	if (!data || !data->cmd)

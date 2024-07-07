@@ -12,10 +12,6 @@
 
 #include "minishell.h"
 
-/* check_out_of_range:
-*	Checks if the number goes over LONG_MAX or LONG_MIN.
-*	Sets an error boolean to true if the number is out of range, false if not.
-*/
 static bool	check_out_of_range(int neg, unsigned long long num, bool *error)
 {
 	if ((neg == 1 && num > LONG_MAX)
@@ -24,11 +20,6 @@ static bool	check_out_of_range(int neg, unsigned long long num, bool *error)
 	return (*error);
 }
 
-/* ft_atoi_long:
-*	Transforms a string comprised of digits into a long integer.
-*	Returns the long integer. In case of error, sets an error boolean
-*	to true.
-*/
 static int	ft_atoi_long(const char *str, bool *error)
 {
 	unsigned long long	num;

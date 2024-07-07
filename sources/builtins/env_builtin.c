@@ -12,9 +12,6 @@
 
 #include "minishell.h"
 
-/* env_builtin:
-Executes the builtin env command: Prints the environment variables. simple.
-*/
 int	env_builtin(t_data *data, char **args)
 {
 	int	i;

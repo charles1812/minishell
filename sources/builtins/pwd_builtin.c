@@ -12,7 +12,6 @@
 
 #include "minishell.h"
 
-/*use getcwd to get the absolute path of current directory */
 int	pwd_builtin(t_data *data, char **args)
 {
 	char	buf[PATH_MAX];

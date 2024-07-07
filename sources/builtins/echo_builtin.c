@@ -29,10 +29,6 @@ static bool	is_n_flag(char *arg)
 	return (n_flag);
 }
 
-/* echo_print_args:
-*	Prints the given array of aruments to STDOUT.
-if -n flag, no \n
-*/
 static void	echo_print_args(char **args, bool n_flag, int i)
 {
 	if (!args[i])
@@ -52,11 +48,6 @@ static void	echo_print_args(char **args, bool n_flag, int i)
 	}
 }
 
-/* echo_builtin:
-*	Executes the echo builtin command: prints the given strings
-*	and adds a \n character or not depending on the -n option.
-*	Returns 1 on completion.
-*/
 int	echo_builtin(t_data *data, char **args)
 {
 	int		i;

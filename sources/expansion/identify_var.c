@@ -42,7 +42,6 @@ int	var_length(char *str)
 	return (count);
 }
 
-//vqr identification
 char	*identify_var(char *str)
 {
 	char	*var;

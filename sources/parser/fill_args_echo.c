@@ -12,16 +12,6 @@
 
 #include "minishell.h"
 
-/*
-**  This function deals with the specific case when the command is "echo"
-**    - It allocates the array of arguments thanks to the count_args function
-**    - It loops through the tokens list while the nodes are of type
-**        VAR or WORD: 
-**         * If "bool join = true" in the token structure is true : we join all
-**           the tokens of type VAR that have the setting "join = true"
-**         * if "join = false" we just fill the last_cmd_>args[i] 
-**            with the current token.
-*/
 int	create_args_echo_mode(t_token **token_node, t_command *last_cmd)
 {
 	int		nb_args;
@@ -51,7 +41,6 @@ int	create_args_echo_mode(t_token **token_node, t_command *last_cmd)
 	return (SUCCESS);
 }
 
-/*put argument to echo command at the end of tab*/
 int	add_args_echo_mode(t_token **token_node, t_command *last_cmd)
 {
 	int		len;

@@ -55,7 +55,6 @@ bool	quotes_in_string(char *str)
 	return (false);
 }
 
-/*del quote in a linked list*/
 int	handle_quotes(t_data *data)
 {
 	t_token	*temp;

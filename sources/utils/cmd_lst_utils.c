@@ -23,7 +23,6 @@ static void	initialize_cmd(t_command **cmd)
 	(*cmd)->next = NULL;
 }
 
-//creation liste
 t_command	*lst_new_cmd(bool value)
 {
 	t_command	*new_node;
@@ -37,7 +36,6 @@ t_command	*lst_new_cmd(bool value)
 	return (new_node);
 }
 
-//add node
 void	lst_add_back_cmd(t_command **alst, t_command *new_node)
 {
 	t_command	*start;

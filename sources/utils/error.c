@@ -12,7 +12,6 @@
 
 #include "minishell.h"
 
-/*Joins two strings together*/
 char	*join_strs(char *str, char *add)
 {
 	char	*tmp;
@@ -27,12 +26,6 @@ char	*join_strs(char *str, char *add)
 	return (str);
 }
 
-/* add_detail_quotes:
-*	Checks whether to add quotes around the error detail:
-*	i.e. "unset: `@': not a valid identifier"
-*	Returns true if the command is export or unset,
-*	false if not.
-*/
 static bool	add_detail_quotes(char *command)
 {
 	if (ft_strncmp(command, "export", 7) == 0
@@ -41,11 +34,6 @@ static bool	add_detail_quotes(char *command)
 	return (false);
 }
 
-/* errmsg_cmd:
-*	Prints an error message to the standard error, prefixed with the
-*	program name.
-*	Returns with the specified error number.
-*/
 int	errmsg_cmd(char *command, char *detail, char *error_message, int error_nb)
 {
 	char	*msg;
@@ -73,10 +61,6 @@ int	errmsg_cmd(char *command, char *detail, char *error_message, int error_nb)
 	return (error_nb);
 }
 
-/* errmsg:
-*	Prints an error message that is unrelated to a specific command.
-*	Used in parsing phase for syntax errors.
-*/
 void	errmsg(char *errmsg, char *detail, int quotes)
 {
 	char	*msg;

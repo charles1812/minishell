@@ -12,8 +12,6 @@
 
 #include "minishell.h"
 
-/* env_var_count:
-Counts how many original environment variables there are.*/
 int	env_var_count(char **env)
 {
 	int	i;
@@ -24,14 +22,6 @@ int	env_var_count(char **env)
 	return (i);
 }
 
-/* get_env_var_index:
-*	Searches for the given variable in the environment variables.
-*
-*	Returns the index of the variable in the environment
-*	matching the given string. Partial variable names are not
-*	supported: the given string must be a full variable name.
-*	Returns -1 if the string cannot be found in the environment.
-*/
 int	get_env_var_index(char **env, char *var)
 {
 	int		i;
@@ -54,9 +44,6 @@ int	get_env_var_index(char **env, char *var)
 	return (-1);
 }
 
-/*
-Searches for the given variable in the environment variables.
-*/
 char	*get_env_var_value(char **env, char *var)
 {
 	int		i;

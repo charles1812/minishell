@@ -12,7 +12,6 @@
 
 #include "minishell.h"
 
-/*close pipe fds*/
 void	close_pipe_fds(t_command *cmds, t_command *skip_cmd)
 {
 	while (cmds)
@@ -26,8 +25,6 @@ void	close_pipe_fds(t_command *cmds, t_command *skip_cmd)
 	}
 }
 
-/*create a pipe if pipe_output == true, until the end of tmp
-friendly reminder ; pipe[0] = lecture, [1] ecriture*/
 bool	create_pipes(t_data *data)
 {
 	int			*fd;
@@ -51,10 +48,6 @@ bool	create_pipes(t_data *data)
 	return (true);
 }
 
-/*Sets the pipe fds for this command. If previous command
-piped to this one, sets the input as the read end of
-the previous command. If this command is piped to the
-next, sets the output ad the write end of the pipe.*/
 bool	set_pipe_fds(t_command *cmds, t_command *c)
 {
 	if (!c)

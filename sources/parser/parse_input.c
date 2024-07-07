@@ -37,9 +37,6 @@ bool	remove_old_file_ref(t_io_fds *io, bool infile)
 	return (true);
 }
 
-/* open_infile:
-*	Opens an infile. If an infile was already set, frees it
-*	and overwrites it. */
 static void	open_infile(t_io_fds *io, char *file, char *original_filename)
 {
 	if (!remove_old_file_ref(io, true))

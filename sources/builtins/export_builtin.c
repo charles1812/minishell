@@ -12,8 +12,6 @@
 
 #include "minishell.h"
 
-/*Separates the given argument into a key-value pair
-for the environment variable.*/
 static char	**get_key_value_pair(char *arg)
 {
 	char	**tmp;
@@ -27,8 +25,6 @@ static char	**get_key_value_pair(char *arg)
 	return (tmp);
 }
 
-/*if the key is valid, try to add a new env var, if the var 
-already exist, overwrite it*/
 int	export_builtin(t_data *data, char **args)
 {
 	int		i;

@@ -62,7 +62,6 @@ int	save_word(t_token **token_lst, char *str, int index, int start)
 	return (0);
 }
 
-//define if special char
 int	is_separator(char *str, int i)
 {
 	if (((str[i] > 8 && str[i] < 14) || str[i] == 32))
@@ -83,7 +82,6 @@ int	is_separator(char *str, int i)
 		return (0);
 }
 
-//define dquote or squote
 int	set_status(int status, char *str, int i)
 {
 	if (str[i] == '\'' && status == DEFAULT)
@@ -97,7 +95,6 @@ int	set_status(int status, char *str, int i)
 	return (status);
 }
 
-//save special char in struct
 int	save_word_or_sep(int *i, char *str, int start, t_data *data)
 {
 	int	type;

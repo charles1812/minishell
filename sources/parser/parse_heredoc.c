@@ -12,11 +12,6 @@
 
 #include "minishell.h"
 
-/* get_heredoc:
-	Opens a heredoc awaiting user input.
-	Translates any given variables into their environment values.
-	Returns false in case of error, true if successful.
-*/
 bool	get_heredoc(t_data *data, t_io_fds *io)
 {
 	int		tmp_fd;
@@ -29,10 +24,6 @@ bool	get_heredoc(t_data *data, t_io_fds *io)
 	return (ret);
 }
 
-/* get_heredoc_name:
-	Generates a unique name for the current heredoc.
-	Returns the new heredoc name.
-*/
 static char	*get_heredoc_name(void)
 {
 	static int	i;
@@ -48,10 +39,6 @@ static char	*get_heredoc_name(void)
 	return (name);
 }
 
-/* get_delim:
-	Returns the heredoc delimiter. Quotes are removed if present
-	around the delimiter, and the quotes boolean is set to true.
-*/
 static char	*get_delim(char *delim, bool *quotes)
 {
 	int	len;
@@ -66,10 +53,6 @@ static char	*get_delim(char *delim, bool *quotes)
 	return (ft_strdup(delim));
 }
 
-/* parse_heredoc:
-	There is the fun part : first we get the file name,
-	then erase the delimiter (if any), fill the heredoc, et voila.
-*/
 void	parse_heredoc(t_data *data, t_command **last_cmd, t_token **token_lst)
 {
 	t_token		*temp;

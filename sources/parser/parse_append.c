@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 #include "minishell.h"
 
-/*664 = rw-rw-r*/
 static void	open_outfile_append(t_io_fds *io, char *file, char *var_filename)
 {
 	if (!remove_old_file_ref(io, false))

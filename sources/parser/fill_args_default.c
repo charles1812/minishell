@@ -25,13 +25,6 @@ int	count_arguments(t_token *temp)
 	return (i);
 }
 
-/*
-**  This function fills the array of arguments of the last_cmd by default mode:
-**    - It allocates the array of arguments thanks to the count_args function
-**    - It loops through the tokens list while the nodes are of type
-**        VAR or WORD, and fills last_cmd->args[i] with the current token 
-*/
-
 int	create_args_default_mode(t_token **token_node, t_command *last_cmd)
 {
 	int		i;
@@ -59,7 +52,6 @@ int	create_args_default_mode(t_token **token_node, t_command *last_cmd)
 	return (SUCCESS);
 }
 
-/*just a copy of args in a new tab*/
 static char	**copy_default_in_new_tab(
 	int len, char **new_tab, t_command *last_cmd, t_token **tk_node)
 {
@@ -83,7 +75,6 @@ static char	**copy_default_in_new_tab(
 	return (new_tab);
 }
 
-/*add args at the end of the tab*/
 int	add_args_default_mode(t_token **token_node, t_command *last_cmd)
 {
 	int		i;
@@ -110,13 +101,6 @@ int	add_args_default_mode(t_token **token_node, t_command *last_cmd)
 	*token_node = temp;
 	return (SUCCESS);
 }
-
-/*
-**  This function fills the arguments in the command structure (command->args)
-**  It has two modes: 
-**    - The "echo mode" if the command is the builtin "echo"
-**    - The default mode for all the other cases
-*/
 
 int	fill_args(t_token **token_node, t_command *last_cmd)
 {

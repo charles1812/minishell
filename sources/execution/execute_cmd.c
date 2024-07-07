@@ -12,7 +12,6 @@
 
 #include "minishell.h"
 
-/* Executes the given command if it is a builtin command.*/
 int	execute_builtin(t_data *data, t_command *cmd)
 {
 	int	ret;
@@ -35,8 +34,6 @@ int	execute_builtin(t_data *data, t_command *cmd)
 	return (ret);
 }
 
-/*Executes the command's system binary file if it can be found
-among the environment executable paths.*/
 static int	execute_sys_bin(t_data *data, t_command *cmd)
 {
 	if (!cmd->command || cmd->command[0] == '\0')
@@ -51,9 +48,6 @@ static int	execute_sys_bin(t_data *data, t_command *cmd)
 	return (EXIT_FAILURE);
 }
 
-/*Attempts to execute the given command as is, in case
-it is a local directory file or already contains the
-path to bin.*/
 static int	execute_local_bin(t_data *data, t_command *cmd)
 {
 	int	ret;
@@ -66,12 +60,6 @@ static int	execute_local_bin(t_data *data, t_command *cmd)
 	return (EXIT_FAILURE);
 }
 
-/*Child process tries to execute the given command by setting
-its input/output fds and searching for an executable.
-Searching for executable in this order:
-Execute builtin command
-Execute system binaries for command.
-Execute given command name directly (local bin)*/
 int	execute_command(t_data *data, t_command *cmd)
 {
 	int	ret;

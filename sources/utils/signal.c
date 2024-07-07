@@ -12,8 +12,6 @@
 
 #include "minishell.h"
 
-/*Resets the readline user input prompt for interactive signal handling.
-*/
 void	signal_reset_prompt(int signo)
 {
 	(void)signo;
@@ -23,9 +21,6 @@ void	signal_reset_prompt(int signo)
 	rl_redisplay();
 }
 
-/* set_signals_interactive:
-SIG null goes brrrr
-*/
 void	set_signals_interactive(void)
 {
 	struct sigaction	act;
@@ -36,18 +31,12 @@ void	set_signals_interactive(void)
 	sigaction(SIGINT, &act, NULL);
 }
 
-/* signal_print_newline:
-*	Prints a newline for noninteractive signal handling.
-*/
 void	signal_print_newline(int signal)
 {
 	(void)signal;
 	rl_on_new_line();
 }
 
-/*Replaces SIGQUIT signals (ctrl-\) with SIG_IGN to ignore
-the signal.
-*/
 void	ignore_sigquit(void)
 {
 	struct sigaction	act;

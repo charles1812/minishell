@@ -26,7 +26,6 @@ static bool	contains_space(char *str)
 	return (false);
 }
 
-/*split every word into token*/
 static void	split_var_cmd_token(t_command *last_cmd, char *cmd_str)
 {
 	t_token		*new_tokens;
@@ -53,7 +52,6 @@ static void	split_var_cmd_token(t_command *last_cmd, char *cmd_str)
 	free_str_tab(strs);
 }
 
-/*if var with space, split the var into 2 token, else, it's just dup*/
 void	parse_word(t_command **cmd, t_token **token_lst)
 {
 	t_token		*temp;

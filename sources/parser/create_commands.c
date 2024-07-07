@@ -12,8 +12,6 @@
 
 #include "minishell.h"
 
-/*prepare commands without arg*/
-
 static void	prep_no_arg_commands(t_data *data)
 {
 	t_command	*cmd;
@@ -34,7 +32,6 @@ static void	prep_no_arg_commands(t_data *data)
 	cmd = lst_last_cmd(data->cmd);
 }
 
-/*handle situation*/
 void	create_commands(t_data *data, t_token *token)
 {
 	t_token	*temp;

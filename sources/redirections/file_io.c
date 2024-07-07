@@ -12,11 +12,6 @@
 
 #include "minishell.h"
 
-/*Restores the original standard input and standard output
-to their original fds of 0 and 1. Used to clear the input/output
-fds after execution, in preparation for the next set of user commands.
-Returns 1 if the duplication was successful, 0 if not.
-*/
 bool	restore_io(t_io_fds *io)
 {
 	int	ret;
@@ -41,11 +36,6 @@ bool	restore_io(t_io_fds *io)
 	return (ret);
 }
 
-/*Duplicates the input and output fds to the standard input and output.
-Backs up the standard input and output before replacing them in order
-to restore them after execution.
-Returns 1 for success, 0 in case of error.
-*/
 bool	redirect_io(t_io_fds *io)
 {
 	int	ret;
@@ -68,10 +58,6 @@ bool	redirect_io(t_io_fds *io)
 	return (ret);
 }
 
-/* check_infile_outfile:
-*	Checks if the infile and outfile are set correctly.
-*	Returns 1 on success, 0 on failure.
-*/
 bool	check_infile_outfile(t_io_fds *io)
 {
 	if (!io || (!io->infile && !io->outfile))

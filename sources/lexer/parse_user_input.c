@@ -26,7 +26,6 @@ static bool	input_is_space(char *input)
 	return (true);
 }
 
-//Tokenizes and parses user input into a structure for execution.
 bool	parse_user_input(t_data *data)
 {
 	if (data->user_input == NULL)

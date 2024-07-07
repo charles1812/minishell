@@ -12,12 +12,6 @@
 
 #include "minishell.h"
 
-/*
-*  After splitting the user's input into tokens, we have to expand 
-*  the variables. After the expansion is done, quote characters are
-*  removed from the original word unless they are between quotes.
-*/
-
 static void	update_status(t_token **token_node, char c)
 {
 	if (c == '\'' && (*token_node)->status == DEFAULT)
@@ -50,7 +44,6 @@ static bool	var_between_quotes(char *str, int i)
 	return (false);
 }
 
-/*transform str into value*/
 int	var_expander(t_data *data, t_token **token_lst)
 {
 	t_token	*temp;
@@ -80,11 +73,6 @@ int	var_expander(t_data *data, t_token **token_lst)
 	return (0);
 }
 
-/* var_expander_heredoc:
-*	Heredoc variant of var_expander. Replaces a string containing an
-*	environment variable, like $USER with its corresponding value.
-*	Returns the replaced string. May return NULL on error.
-*/
 char	*var_expander_heredoc(t_data *data, char *str)
 {
 	int	i;

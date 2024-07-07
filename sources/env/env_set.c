@@ -12,7 +12,6 @@
 
 #include "minishell.h"
 
-/*Reallocates memory, returns a pointer to the new environment variables*/
 static char	**realloc_env_vars(t_data *data, int size)
 {
 	char	**new_env;
@@ -31,10 +30,6 @@ static char	**realloc_env_vars(t_data *data, int size)
 	free(data->env);
 	return (new_env);
 }
-/*Adds an environment variable with the given key
-corresponding to the given value. If the key already
-exists in the environment variables, the value will
-be overwritten. If not, it creates a new entry.*/
 
 bool	set_env_var(t_data *data, char *key, char *value)
 {
@@ -63,9 +58,6 @@ bool	set_env_var(t_data *data, char *key, char *value)
 	free_ptr(tmp);
 	return (true);
 }
-
-/*Removes the variable at the given index from the
-environment variables*/
 
 bool	remove_env_var(t_data *data, int idx)
 {

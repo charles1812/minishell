@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "minishell.h"
-/*replace var str in token-> str with nothing*/
+
 static int	erase_var(t_token **token_node, char *str, int index)
 {
 	int		i;
@@ -40,12 +40,6 @@ static int	erase_var(t_token **token_node, char *str, int index)
 	(*token_node)->str = new_str;
 	return (0);
 }
-
-// Changed return type from int to char * to adapt the function
-// to work for heredoc variable expansion. Heredoc has no tokens
-// so token_node becomes optional.
-// Heredoc variant replace_str_heredoc calls this function with
-// token_node == NULL!
 
 static char	*erase_and_replace(t_token **token_node, char *str,
 			char *var_value, int index)
@@ -86,12 +80,6 @@ int	replace_var(t_token **token_node, char *var_value, int index)
 	free_ptr(var_value);
 	return (0);
 }
-
-/* replace_str_heredoc:
-*	Heredoc variant of replace_var, replaces an environment variable
-*	by its value. Ex. $USER -> username.
-*	Returns the replaced string.
-*/
 
 char	*replace_str_heredoc(char *str, char *var_value, int index)
 {

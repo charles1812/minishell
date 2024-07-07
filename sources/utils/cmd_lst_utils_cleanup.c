@@ -12,7 +12,6 @@
 
 #include "minishell.h"
 
-/*delete list*/
 void	lst_delone_cmd(t_command *lst, void (*del)(void *))
 {
 	if (lst->command)
@@ -26,7 +25,6 @@ void	lst_delone_cmd(t_command *lst, void (*del)(void *))
 	(*del)(lst);
 }
 
-/*delete token*/
 void	lst_clear_cmd(t_command **lst, void (*del)(void *))
 {
 	t_command	*temp;

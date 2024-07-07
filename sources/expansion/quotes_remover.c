@@ -12,7 +12,6 @@
 
 #include "minishell.h"
 
-//define status to squote ou dquote
 static void	change_status_to_quote(t_token **token_node, int *i)
 {
 	if ((*token_node)->str[*i] == '\'')
@@ -31,7 +30,6 @@ static bool	if_quotes_and_default(t_token **token_node, int i)
 		return (false);
 }
 
-/*define status to default*/
 static bool	change_back_to_default(t_token **token_node, int *i)
 {
 	if (((*token_node)->str[*i] == '\'' && (*token_node)->status == SQUOTE)
@@ -45,7 +43,6 @@ static bool	change_back_to_default(t_token **token_node, int *i)
 		return (false);
 }
 
-/*define squote or dquote status and remove the quote form the string*/
 int	remove_quotes(t_token **token_node)
 {
 	char	*new_line;

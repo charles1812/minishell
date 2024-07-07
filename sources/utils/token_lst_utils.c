@@ -30,7 +30,6 @@ t_token	*lst_new_token(char *str, char *str_backup, int type, int status)
 	return (new_node);
 }
 
-/*insert a token at the last position*/
 void	lst_add_back_token(t_token **alst, t_token *new_node)
 {
 	t_token	*start;
@@ -50,7 +49,6 @@ void	lst_add_back_token(t_token **alst, t_token *new_node)
 	}
 }
 
-/*delete a token*/
 void	lstdelone_token(t_token *lst, void (*del)(void *))
 {
 	if (del && lst && lst->str)
@@ -70,7 +68,6 @@ void	lstdelone_token(t_token *lst, void (*del)(void *))
 	free_ptr(lst);
 }
 
-//wipe
 void	lstclear_token(t_token **lst, void (*del)(void *))
 {
 	t_token	*tmp;

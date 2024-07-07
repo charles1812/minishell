@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "minishell.h"
-/*search var*/
+
 static int	var_exists(t_data *data, char *var)
 {
 	int		i;

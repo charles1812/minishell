@@ -12,7 +12,6 @@
 
 #include "minishell.h"
 
-/*Removes the environment variables with the given keys*/
 int	unset_builtin(t_data *data, char **args)
 {
 	int	i;
